@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homework</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if @customer.present? && !@customer.new_record? %>
+	<%= link_to 'Bookings', customer_bookings_path(@customer) %>
+	<%= link_to 'Cleaners', cleaners_path %>
+<% else %>
+	<%= link_to 'Sign Up', new_customer_path %>
+<% end %>
+<hr>
+<%= yield %>
+
+</body>
+</html>
