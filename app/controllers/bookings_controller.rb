@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
   def create
     respond_to do |format|
       if @booking.save
+        CleanerMailer.assign_work(@booking.cleaner)
         format.html { redirect_to customer_booking_path(@customer,@booking), notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
