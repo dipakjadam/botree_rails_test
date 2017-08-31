@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.9.0"
 
-server '13.232.0.87', port: 22, roles: [:web, :app, :db], primary: true
+server '52.66.96.233', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:dipakjadam/botree_rails_test.git'
 set :application,     'botree_rails_test'
